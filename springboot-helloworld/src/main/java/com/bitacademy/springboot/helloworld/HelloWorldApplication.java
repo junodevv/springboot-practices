@@ -2,12 +2,13 @@ package com.bitacademy.springboot.helloworld;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 
 /*
 1. 스프링 어플리케이션 부트스트래핑 역할: Bootstrap Class
 2. 설정 클래스 역할: Configuration Class
 */
-@SpringBootApplication
+@SpringBootApplication // 이 어노테이션이 scan까지 가지고 있음,이 하위 패키지를 모두 스캔함, 그래서 이걸 갖고있는애가 가장 상위 패키지가 되어야함.
 public class HelloWorldApplication {
 
 	public static void main(String[] args) {
@@ -24,8 +25,19 @@ public class HelloWorldApplication {
 		 * 		4) 서버 인스턴스 실행
 		 * 5. ApplicationRunner 인터페이스를 구현한 빈을 Container(ApplicationContext)에서 찾아 실행시킴 
 		 */
-		SpringApplication.run(HelloWorldApplication.class, args);
+//		ConfigurableApplicationContext ac = null;
+//		try {
+//			ac = SpringApplication.run(HelloWorldApplication.class, args);
+//		} catch(Throwable ex){
+//			ex.printStackTrace();
+//		} finally {
+//			if(ac != null) {
+//				ac.close();
+//			}
+//		}
 		
+		// try ~ with ~ resources 구문
+		try (ConfigurableApplicationContext ac = SpringApplication.run(HelloWorldApplication.class, args)){}
 	}
 
 }
