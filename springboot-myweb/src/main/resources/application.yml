@@ -1,3 +1,12 @@
+# spring configuration
+spring:
+   application:
+      name: myweb
+      
+   devtools:
+      livereload:
+         enabled: true
+
 # server
 server:
-   port:9090
+   port: 8080

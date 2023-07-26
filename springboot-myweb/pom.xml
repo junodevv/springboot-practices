@@ -14,6 +14,7 @@
 	<groupId>com.bitacademy</groupId>
 	<artifactId>springboot-myweb</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 
 
 	<properties>
@@ -32,8 +33,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
-			<scope>test</scope>
 		</dependency>
+		
+		<!--Springboot Dev Tools: Live Reload-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
 
 		<!--Spring Boot Test Integration-->
 		<dependency>
